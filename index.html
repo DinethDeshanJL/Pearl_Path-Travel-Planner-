@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pearl Path - Your World, Organized</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 0.5rem;">
+                <img src="Sri.png" alt="Pearl Path Logo" class="logo-image" style="height: 50px; width: auto;">
+                <span class="logo-text">Pearl Path
+                </span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-primary">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <!-- Using a high-quality placeholder image for the hero background -->
+      <div class="hero-bg" id="hero-bg" style="background-image: url('hero-bg.jpg'); transition: background-image 1s ease-in-out;"></div>
+        <div class="hero-content">
+            <div class="hero-badge">DISCOVER YOUR NEXT JOURNEY</div>
+            <h1 class="hero-title">Your World,<br><span class="text-blue">Organized.</span></h1>
+            <p class="hero-subtitle">The smartest way to plan your next adventure. Build detailed itineraries, manage budgets, and collaborate with friends in real-time.</p>
+            <div class="hero-buttons">
+                <a href="login.html" class="btn btn-primary btn-large">Get Started</a>
+                <a href="SL.mp4" class="btn btn-outline btn-large">Watch Demo</a>
+            </div>
+            
+            <div class="carousel-indicators" id="hero-indicators">
+                <span class="indicator active" data-index="0"></span>
+                <span class="indicator" data-index="1"></span>
+                <span class="indicator" data-index="2"></span>
+                <span class="indicator" data-index="3"></span>
+                <span class="indicator" data-index="4"></span>
+            </div>
+        </div>
+    </header>
+
+    <section class="features" id="about">
+        <div class="section-header">
+            <h4 class="section-subtitle text-blue">WHY CHOOSE US</h4>
+            <h2 class="section-title">Seamless Travel Management</h2>
+            <p class="section-desc">We provide the tools you need to move from inspiration to execution without the stress of messy spreadsheets.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card" style="background-color: var(--app-blue-light);">
+                <div class="feature-icon"><i class="fa-regular fa-calendar" style="color: var(--brand-blue);"></i></div>
+                <h3 class="feature-title">Smart Organization</h3>
+                <p class="feature-desc">Automatic time-zone adjustments and smart activity grouping to keep your days perfectly balanced.</p>
+            </div>
+            <div class="feature-card" style="background-color: var(--app-green-light);">
+                <div class="feature-icon"><i class="fa-solid fa-user-group" style="color: var(--app-green);"></i></div>
+                <h3 class="feature-title">Collaborative Planning</h3>
+                <p class="feature-desc">Invite friends to edit itineraries, vote on destinations, and split costs effortlessly in one shared space.</p>
+            </div>
+            <div class="feature-card" style="background-color: #FEF3C7;">
+                <div class="feature-icon"><i class="fa-solid fa-cloud-arrow-down" style="color: var(--app-orange);"></i></div>
+                <h3 class="feature-title">Offline Access</h3>
+                <p class="feature-desc">Download your entire itinerary including maps and documents to access them even without data.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="steps-section">
+        <div class="steps-container">
+            <div class="steps-image-col">
+                <!-- Placeholder for the mint green planning graphic -->
+                <div class="image-placeholder">
+                    <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=2074&auto=format&fit=crop" alt="Planning UI Visualization">
+                    <div class="image-gradient-overlay"></div>
+                    <div class="image-content">
+                        <h2>PLANNING</h2>
+                        <p>MAKING TRAVEL EASIER THAN EVER</p>
+                    </div>
+                </div>
+            </div>
+            <div class="steps-content-col">
+                <h2 class="section-title">Plan your dream trip in <span class="text-blue">3 simple steps</span></h2>
+                
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <div class="step-text">
+                        <h3>Choose Destination</h3>
+                        <p>Search thousands of cities and get AI-powered recommendations based on your travel style.</p>
+                    </div>
+                </div>
+                
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <div class="step-text">
+                        <h3>Drag & Drop Activities</h3>
+                        <p>Add sightseeing, restaurants, and hotels to your daily schedule with a simple drag-and-drop interface.</p>
+                    </div>
+                </div>
+                
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <div class="step-text">
+                        <h3>Share & Travel</h3>
+                        <p>Export to PDF, sync with Google Calendar, or share a live link with your travel companions.</p>
+                    </div>
+                </div>
+                
+                <a href="login.html" id="start-plan-btn" class="btn btn-primary btn-large mt-4">Get Started &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-banner bg-blue">
+        <div class="stat-item">
+            <h2 class="stat-number">10k+</h2>
+            <h2 class="stat-label">ACTIVE TRAVELERS<h2>
+        </div>
+        <div class="stat-item">
+            <h2 class="stat-number">50k+</h2>
+            <h3 class="stat-label">TRIPS PLANNED</h3>
+        </div>
+        <div class="stat-item">
+            <h2 class="stat-number">190+</h2>
+            <h3 class="stat-label">COUNTRIES COVERED</h3>
+        </div>
+        <div class="stat-item">
+            <h2 class="stat-number">4.9/5</h2>
+            <h3 class="stat-label">USER RATING</h3>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="index.html" class="logo" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 0.5rem;">
+                    <img src="logo.png" alt="Pearl Path Logo" class="logo-image" style="height: 32px; width: auto;">
+                    <span class="logo-text">Pearl Path</span>
+                </a>
+                <p class="footer-desc">Making world travel simpler, more organized, and collaborative for everyone.</p>
+            </div>
+            
+            <div class="footer-links">
+                <div>
+                <a href="#" style="align-content: left;">CONTACT US</a>
+             <p>Whatsapp Number: +94 76 543 2107</p>
+             <a href="#" >Email:  dinethdeshan8704@gmail.com</a>
+                </div>
+                
+                <div class="social-icons">
+                    <a href="https://twitter.com/" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="https://instagram.com/" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Pearl Path Travel Planner. All rights reserved.</p>
+        </div>
+    </footer>
+    <footer class="footer" id="contact"></footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
