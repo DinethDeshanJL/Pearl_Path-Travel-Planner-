@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pearl Path - Budget</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dashboard-body"> <!-- Reuse grey bg -->
+    <nav class="dashboard-nav">
+        <div class="dash-nav-container">
+            <a href="index.html" class="logo" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 0.5rem;">
+                <img src="logo.png" alt="Pearl Path Logo" class="logo-image" style="height: 32px; width: auto;">
+                <span class="logo-text">Pearl Path</span>
+            </a>
+             <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="explore.html">Upcoming Plans</a></li>
+                <li><a href="budget.html">Budget Planner</a></li>
+            </ul>
+            <div class="user-profile">
+                <a href="#" class="text-blue" style="font-weight: 500; font-size: 0.95rem;"></a>
+                <div class="avatar" style="background-color: #E6C2A5;"></div>
+            </div>
+        </div>
+    </nav>
+    
+
+    <main class="budget-main">
+        <header class="budget-header">
+            <div>
+                <p class="budget-dates" id="trip-dates"><i class="fa-regular fa-calendar text-blue"></i> JULY 15 - JULY 28, 2024</p>
+                <h1 class="dash-title" id="trip-title">Summer in Colombo</h1>
+                <p class="dash-subtitle" id="trip-subtitle">Manage your spending and stay within your Rs.50,000 budget.</p>
+            </div>
+            <div style="display: flex; gap: 1rem;">
+                <button class="btn btn-outline btn-large" id="edit-trip-btn" style="color: var(--text-dark); border-color: var(--border-color); background: var(--bg-white);"><i class="fa-solid fa-pen"></i> Edit Trip</button>
+                <button class="btn btn-primary btn-large" id="add-expense-btn"><i class="fa-solid fa-plus"></i> Add Expense</button>
+                <button class="btn btn-outline btn-large" id="finish-trip-btn" style="color: var(--app-green); border-color: var(--app-green); background: var(--bg-white);"><i class="fa-solid fa-check"></i> Finish Trip</button>
+            </div>
+        </header>
+
+        <!-- Budget Stats Row -->
+        <div class="budget-stats-grid">
+            <div class="budget-stat-card">
+                <div class="stat-icon-wrapper bg-app-blue-light">
+                    <i class="fa-solid fa-wallet text-blue"></i>
+                </div>
+                <div class="stat-content">
+                    <p class="stat-card-label">TOTAL BUDGET</p>
+                    <h2 class="stat-value" id="budget-total">Rs.50,000.00</h2>
+                    <p class="stat-subtitle">Fixed allocation</p>
+                </div>
+            </div>
+
+            <div class="budget-stat-card">
+                <div class="stat-icon-wrapper" style="background-color: #FFEDD5;">
+                    <i class="fa-solid fa-money-bill-wave" style="color: var(--app-orange);"></i>
+                </div>
+                <div class="stat-content">
+                    <p class="stat-card-label">SPENT SO FAR</p>
+                    <h2 class="stat-value" id="budget-spent">Rs.30,124.50</h2>
+                    <p class="stat-subtitle" id="budget-percent" style="color: var(--app-orange);"><i class="fa-solid fa-arrow-trend-up"></i> 62% of budget</p>
+                </div>
+            </div>
+
+            <div class="budget-stat-card">
+                <div class="stat-icon-wrapper" style="background-color: var(--app-green-light);">
+                    <i class="fa-solid fa-piggy-bank text-green"></i>
+                </div>
+                <div class="stat-content">
+                    <p class="stat-card-label">REMAINING</p>
+                    <h2 class="stat-value text-green" id="budget-remaining">Rs.19,875.50</h2>
+                    <p class="stat-subtitle">Safe to spend</p>
+                </div>
+            </div>
+
+            <div class="budget-stat-card">
+                <div class="stat-icon-wrapper" style="background-color: #F3E8FF;">
+                    <i class="fa-regular fa-calendar-check" style="color: var(--app-purple);"></i>
+                </div>
+                <div class="stat-content">
+                    <p class="stat-card-label">DAILY AVG.</p>
+                    <h2 class="stat-value" id="budget-daily">Rs.223.18</h2>
+                    <p class="stat-subtitle">For remaining 8 days</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Expenses Table Section -->
+        <div class="expenses-section">
+            <div class="expenses-header">
+                <h2 class="section-title" style="margin-bottom: 0; font-size: 1.25rem;">Recent Expenses</h2>
+                <div class="table-toggle">
+                    <button class="toggle-btn">ALL</button>
+                    <button class="toggle-btn active">RECENT</button>
+                </div>
+            </div>
+
+            <div class="table-responsive">
+                <table class="expenses-table">
+                    <thead>
+                        <tr>
+                            <th>DATE</th>
+                            <th>EXPENSE ITEM</th>
+                            <th>CATEGORY</th>
+                            <th>AMOUNT</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="expense-table-body">
+                        <tr>
+                            <td>Jul 18, 2024</td>
+                            <td class="item-name">Dinner</td>
+                            <td><span class="cat-badge cat-food">FOOD</span></td>
+                            <td class="item-amount">Rs.000.00</td>
+                            <td class="item-action"><button><i class="fa-solid fa-pen"></i></button></td>
+                        </tr>
+                        <tr>
+                            <td>Jul 17, 2024</td>
+                            <td class="item-name">Breakfast & Lunch</td>
+                            <td><span class="cat-badge cat-stay">STAY</span></td>
+                            <td class="item-amount">Rs.000.00</td>
+                            <td class="item-action"><button><i class="fa-solid fa-pen"></i></button></td>
+                        </tr>
+                        <tr>
+                            <td>Jul 16, 2024</td>
+                            <td class="item-name">Transport</td>
+                            <td><span class="cat-badge cat-transport">TRANSPORT</span></td>
+                            <td class="item-amount">Rs.000.00</td>
+                            <td class="item-action"><button><i class="fa-solid fa-pen"></i></button></td>
+                        </tr>
+                        <tr>
+                            <td>Jul 15, 2024</td>
+                            <td class="item-name">Hotels</td>
+                            <td><span class="cat-badge cat-flights">FLIGHTS</span></td>
+                            <td class="item-amount">Rs.000.00</td>
+                            <td class="item-action"><button><i class="fa-solid fa-pen"></i></button></td>
+                        </tr>
+                        <tr>
+                            <td>Jul 15, 2024</td>
+                            <td class="item-name">Other</td>
+                            <td><span class="cat-badge cat-transport">TRANSPORT</span></td>
+                            <td class="item-amount">Rs.45.00</td>
+                            <td class="item-action"><button><i class="fa-solid fa-pen"></i></button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="table-footer">
+                <span class="running-total-label">RUNNING TOTAL</span>
+                <span class="running-total-value" id="running-total">Rs.3,124.50</span>
+            </div>
+        </div>
+
+        <!-- Trip History Section -->
+        <div class="expenses-section" style="margin-top: 3rem;">
+            <div class="expenses-header" style="margin-bottom: 1.5rem;">
+                <h2 class="section-title" style="margin-bottom: 0; font-size: 1.25rem;"><i class="fa-solid fa-clock-rotate-left text-blue" style="margin-right: 0.5rem;"></i> Trip History</h2>
+            </div>
+            
+            <div class="dash-grid" id="trip-history-grid" style="grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));">
+                <!-- History Card 1 -->
+                <div class="journey-card" style="box-shadow: none; border: 1px solid var(--border-color);">
+                    <div class="journey-img" style="background-image: url('https://images.unsplash.com/photo-1546708770-5b922a0e722a?q=80&w=2070&auto=format&fit=crop'); height: 120px;">
+                        <span class="journey-badge" style="background: rgba(255,255,255,0.9); color: var(--text-dark);">COMPLETED</span>
+                    </div>
+                    <div class="journey-content" style="padding: 1rem;">
+                        <h3 class="journey-title" style="font-size: 1.1rem; margin-bottom: 0.25rem;">Sigiriya Safari</h3>
+                        <p class="journey-dates" style="font-size: 0.8rem; margin-bottom: 0.5rem;"><i class="fa-regular fa-calendar"></i> Oct 12 - Oct 20, 2023</p>
+                        <div style="background: var(--bg-light); padding: 0.75rem; border-radius: var(--radius-md); margin-top: 0.75rem;">
+                            <div style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.25rem;">
+                                <span style="color: var(--text-gray);">Budget:</span>
+                                <strong>Rs.45,000</strong>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; font-size: 0.85rem;">
+                                <span style="color: var(--text-gray);">Spent:</span>
+                                <strong class="text-green">Rs.42,100</strong>
+                            </div>
+                        </div>
+                        <button class="btn btn-outline w-100" style="margin-top: 1rem; color: var(--text-dark); border-color: var(--border-color);" onclick="openViewDetails('Sigiriya Safari', 'A wonderful safari trip staying well within our budget of Rs.45,000. The highlight was definitely the Minneriya jeep safari where we saw over 50 elephants!')">View Details</button>
+                    </div>
+                </div>
+
+                <!-- History Card 2 -->
+                <div class="journey-card" style="box-shadow: none; border: 1px solid var(--border-color);">
+                    <div class="journey-img" style="background-image: url('https://images.unsplash.com/photo-1596434455855-ec4c1f516aed?q=80&w=2070&auto=format&fit=crop'); height: 120px;">
+                        <span class="journey-badge" style="background: rgba(255,255,255,0.9); color: var(--text-dark);">COMPLETED</span>
+                    </div>
+                    <div class="journey-content" style="padding: 1rem;">
+                        <h3 class="journey-title" style="font-size: 1.1rem; margin-bottom: 0.25rem;">Unawatuna Beach</h3>
+                        <p class="journey-dates" style="font-size: 0.8rem; margin-bottom: 0.5rem;"><i class="fa-regular fa-calendar"></i> Jan 05 - Jan 10, 2024</p>
+                        <div style="background: var(--bg-light); padding: 0.75rem; border-radius: var(--radius-md); margin-top: 0.75rem;">
+                            <div style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.25rem;">
+                                <span style="color: var(--text-gray);">Budget:</span>
+                                <strong>Rs.60,000</strong>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; font-size: 0.85rem;">
+                                <span style="color: var(--text-gray);">Spent:</span>
+                                <strong style="color: var(--app-orange);">Rs.61,500 <span style="font-size: 0.75rem;">(+Rs.1,500)</span></strong>
+                            </div>
+                        </div>
+                        <button class="btn btn-outline w-100" style="margin-top: 1rem; color: var(--text-dark); border-color: var(--border-color);" onclick="openViewDetails('Unawatuna Beach', 'A relaxing beach getaway. We overspent slightly on dining out, but it was worth it! The coral reefs were absolutely stunning.')">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Feedback Section -->
+        <div class="feedback-card" style="margin-top: 3rem;">
+            <h2 class="feedback-title">How is your experience?</h2>
+            <p class="feedback-desc">We'd love to hear your thoughts on the simplified budget tracker.</p>
+            
+            <p class="rate-label">RATE YOUR EXPERIENCE</p>
+            <div class="stars" id="feedback-stars" style="cursor: pointer; display: flex; gap: 0.5rem; font-size: 1.5rem; margin-bottom: 1.5rem;">
+                <i class="fa-solid fa-star" data-val="1" style="color: #F59E0B;"></i>
+                <i class="fa-solid fa-star" data-val="2" style="color: #F59E0B;"></i>
+                <i class="fa-solid fa-star" data-val="3" style="color: #F59E0B;"></i>
+                <i class="fa-solid fa-star" data-val="4" style="color: #F59E0B;"></i>
+                <i class="fa-solid fa-star" data-val="5" style="color: #E2E8F0;"></i>
+            </div>
+            
+            <div class="form-group" style="text-align: left; width: 100%;">
+                <label style="color: var(--text-dark); font-weight: 500;">Your Comments</label>
+                <textarea rows="4" placeholder="What can we improve? What features do you love?" style="resize: none;"></textarea>
+            </div>
+            
+            <button class="btn btn-primary w-100" style="padding: 1rem; font-size: 1rem; border-radius: var(--radius-md);" onclick="alert('Thank you for your feedback!')"><i class="fa-solid fa-paper-plane" style="margin-right: 0.5rem;"></i> Submit Feedback</button>
+        </div>
+    </main>
+
+    <footer class="dash-footer" style="padding: 4rem 2rem;">
+        <p>&copy; 2024 Pearl Path Budgeting Tool. All rights reserved.</p>
+    </footer>
+
+    <!-- View Details Modal -->
+    <div id="view-details-modal" class="modal">
+        <div class="modal-content">
+            <h2 style="margin-bottom: 1.5rem;" id="view-details-title">Trip Details</h2>
+            <p id="view-details-content" style="color: var(--text-gray); line-height: 1.6; margin-bottom: 1.5rem; font-size: 0.95rem;">
+                Loading trip details...
+            </p>
+            <button type="button" class="btn btn-primary w-100" onclick="closeViewDetailsModal()">Close Window</button>
+        </div>
+    </div>
+
+    <!-- Edit Trip Modal -->
+    <div id="trip-modal" class="modal">
+        <div class="modal-content">
+            <h2 style="margin-bottom: 1.5rem;">Edit Trip Details</h2>
+            <form id="trip-form">
+                <div class="form-group">
+                    <label>Trip Title</label>
+                    <input type="text" id="trip-title-input" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label>Start Date</label>
+                        <input type="date" id="trip-start-date" required>
+                    </div>
+                    <div class="form-group half">
+                        <label>End Date</label>
+                        <input type="date" id="trip-end-date" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Total Budget (Rs.)</label>
+                    <input type="number" step="0.01" id="trip-budget-input" required>
+                </div>
+                <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+                    <button type="submit" class="btn btn-primary w-100">Save Trip</button>
+                    <button type="button" class="btn btn-outline w-100" style="color: var(--text-dark); border-color: var(--border-color); background: transparent;" onclick="closeTripModal()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add/Edit Expense Modal -->
+    <div id="expense-modal" class="modal">
+        <div class="modal-content">
+            <h2 id="modal-title" style="margin-bottom: 1.5rem;">Add Expense</h2>
+            <form id="expense-form">
+                <input type="hidden" id="expense-id">
+                <div class="form-group">
+                    <label>Date</label>
+                    <input type="date" id="expense-date" required>
+                </div>
+                <div class="form-group">
+                    <label>Expense Item</label>
+                    <input type="text" id="expense-name" placeholder="e.g. Dinner" required>
+                </div>
+                <div class="form-group">
+                    <label>Category</label>
+                    <select id="expense-category" style="width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--border-color); border-radius: var(--radius-md); font-family: var(--font-main);" required>
+                        <option value="FOOD">Food</option>
+                        <option value="STAY">Stay</option>
+                        <option value="TRANSPORT">Transport</option>
+                        <option value="FLIGHTS">Flights</option>
+                        <option value="ACTIVITIES">Activities</option>
+                        <option value="OTHER">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Amount (Rs.)</label>
+                    <input type="number" step="0.01" id="expense-amount" placeholder="0.00" required>
+                </div>
+                <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+                    <button type="submit" class="btn btn-primary w-100">Save</button>
+                    <button type="button" class="btn btn-outline w-100" style="color: var(--text-dark); border-color: var(--border-color); background: transparent;" onclick="closeExpenseModal()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pearl Path - Sign In</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="login-body">
+    <!-- Using a Sri Lankan landscape for the background -->
+    <div class="login-bg" style="background-image: url('hero-bg.jpg');"></div>
+    <div class="login-overlay"></div>
+
+    <div class="login-container">
+        <!-- Left Side: Content -->
+        <div class="login-content">
+            <img src="Sri.png" class="login-logo-icon" alt="Pearl Path Logo">
+            <h1 class="login-title">Pearl Path</h1>
+            <p class="login-subtitle">Discover the hidden gems of Sri Lanka. Plan your next adventure with ease and explore personalized travel itineraries.</p>
+            
+            <div class="login-socials">
+                <a href="#" class="social-circle"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" class="social-circle"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#" class="social-circle"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="social-circle"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+
+        <!-- Right Side: Form -->
+        <div class="login-form-wrapper">
+            <div class="login-glass-card">
+                <h2 class="form-title">Sign in</h2>
+                <form id="login-form" action="explore.html">
+                    <div class="login-form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" placeholder="example@gmail.com" required>
+                    </div>
+                    <div class="login-form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="••••••••" required>
+                    </div>
+                    <!-- Submit directly to the dashboard page to simulate logging in -->
+                    <button type="submit" class="btn-login-submit">Sign in now</button>
+                </form>
+                <div class="login-footer">
+                    By clicking on "Sign in now" you agree to<br>
+                    <a href="#">Terms of Service</a> | <a href="#">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const loginForm = document.getElementById('login-form');
+        if (loginForm) {
+            loginForm.addEventListener('submit', () => {
+                localStorage.setItem('isLoggedIn', 'true');
+                const email = document.getElementById('email').value;
+                if (email) {
+                    const namePart = email.split('@')[0];
+                    const formatted = namePart.charAt(0).toUpperCase() + namePart.slice(1);
+                    localStorage.setItem('userName', formatted);
+                }
+            });
+        }
+    </script>
+</body>
+</html>
