@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pearl Path - Explore</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="explore-body">
+    <nav class="explore-nav">
+        <div class="dash-nav-container">
+            <a href="index.html" class="logo" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 0.5rem;">
+                <img src="logo.png" alt="Pearl Path Logo" class="logo-image" style="height: 32px; width: auto;">
+                <span class="logo-text">Pearl Path</span>
+            </a>
+            
+            <ul class="nav-links explore-links">
+                <li><a href="dashboard.html" class="active text-blue">Upcoming Plans</a></li>
+                <li><a href="#" id="nav-my-plan-btn">My Plan</a></li>
+                <li><a href="budget.html">Budget Planner</a></li>
+            </ul>
+
+            <div class="user-profile">
+                <div class="avatar" style="background-color: #F8B4B4; border: 2px solid white; box-shadow: 0 0 0 2px var(--brand-blue);">
+                    <i class="fa-solid fa-user" style="color: white; margin: 10px; display:block; text-align:center;"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="explore-main">
+        <section class="explore-hero">
+            <h1 class="explore-title">Discover Your Next <span class="text-blue">Adventure</span></h1>
+            <p class="explore-subtitle">Explore hand-picked destinations around the world and start building your dream itinerary today.</p>
+            
+            <div class="search-bar-container">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" id="explore-search-input" class="explore-search" placeholder="Search cities, countries, or landmarks...">
+            </div>
+            
+            <div class="filter-pills">
+                <button class="pill active">All</button>
+                <button class="pill">Nature</button>
+                <button class="pill">City</button>
+                <button class="pill">Beach</button>
+                <button class="pill">Adventure</button>
+            </div>
+        </section>
+
+        <section class="explore-grid" id="main-explore-grid">
+            <!-- Card 1 -->
+            <div class="dest-card">
+                <div class="dest-img" style="background-image: url('fort.jpg');">
+                    <button class="like-btn"><i class="fa-regular fa-heart"></i></button>
+                    <span class="dest-badge bg-blue">CITY</span>
+                </div>
+                <div class="dest-content">
+                    <div class="dest-header">
+                        <h3 class="dest-title">Galle Fort</h3>
+                        <span class="dest-rating"><i class="fa-solid fa-star"></i> 4.9</span>
+                    </div>
+                    <p class="dest-desc">Historic Dutch fort with cobblestone streets, boutique cafes, and beautiful ocean views.</p>
+                    <button class="btn btn-light-blue w-100"><i class="fa-solid fa-plus"></i> Add to Plan</button>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="dest-card">
+                <div class="dest-img" style="background-image: url('ella.webp');">
+                    <button class="like-btn"><i class="fa-regular fa-heart"></i></button>
+                    <span class="dest-badge" style="background-color: var(--app-green);">NATURE</span>
+                </div>
+                <div class="dest-content">
+                    <div class="dest-header">
+                        <h3 class="dest-title">Ella</h3>
+                        <span class="dest-rating"><i class="fa-solid fa-star"></i> 4.9</span>
+                    </div>
+                    <p class="dest-desc">Lush green hills, iconic train rides, and stunning waterfalls in the heart of tea country.</p>
+                    <button class="btn btn-light-blue w-100"><i class="fa-solid fa-plus"></i> Add to Plan</button>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="dest-card">
+                <div class="dest-img" style="background-image: url('unawatuna.jpg');">
+                    <button class="like-btn"><i class="fa-regular fa-heart"></i></button>
+                    <span class="dest-badge" style="background-color: #0EA5E9;">BEACH</span>
+                </div>
+                <div class="dest-content">
+                    <div class="dest-header">
+                        <h3 class="dest-title">Unawatuna</h3>
+                        <span class="dest-rating"><i class="fa-solid fa-star"></i> 4.7</span>
+                    </div>
+                    <p class="dest-desc">Golden sandy shores, vibrant coral reefs, and a laid-back beach town vibe.</p>
+                    <button class="btn btn-light-blue w-100"><i class="fa-solid fa-plus"></i> Add to Plan</button>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="dest-card">
+                <div class="dest-img" style="background-image: url('yala.jpg');">
+                    <button class="like-btn"><i class="fa-regular fa-heart"></i></button>
+                    <span class="dest-badge" style="background-color: var(--app-orange);">ADVENTURE</span>
+                </div>
+                <div class="dest-content">
+                    <div class="dest-header">
+                        <h3 class="dest-title">Yala National Park</h3>
+                        <span class="dest-rating"><i class="fa-solid fa-star"></i> 4.8</span>
+                    </div>
+                    <p class="dest-desc">Thrilling wildlife safaris with leopards, elephants, and diverse bird species.</p>
+                    <button class="btn btn-light-blue w-100"><i class="fa-solid fa-plus"></i> Add to Plan</button>
+                </div>
+            </div>
+            
+            <!-- Card 5 -->
+            <div class="dest-card">
+                <div class="dest-img" style="background-image: url('mirissa.webp');">
+                    <button class="like-btn"><i class="fa-regular fa-heart"></i></button>
+                    <span class="dest-badge" style="background-color: #0EA5E9;">BEACH</span>
+                </div>
+                <div class="dest-content">
+                    <div class="dest-header">
+                        <h3 class="dest-title">Mirissa</h3>
+                        <span class="dest-rating"><i class="fa-solid fa-star"></i> 4.9</span>
+                    </div>
+                    <p class="dest-desc">Palm-fringed beaches, vibrant nightlife, and epic whale-watching adventures.</p>
+                    <button class="btn btn-light-blue w-100"><i class="fa-solid fa-plus"></i> Add to Plan</button>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="dest-card">
+                <div class="dest-img" style="background-image: url('adams_peak.jpg');">
+                    <button class="like-btn"><i class="fa-regular fa-heart"></i></button>
+                    <span class="dest-badge" style="background-color: var(--app-green);">NATURE</span>
+                </div>
+                <div class="dest-content">
+                    <div class="dest-header">
+                        <h3 class="dest-title">Adam's Peak</h3>
+                        <span class="dest-rating"><i class="fa-solid fa-star"></i> 4.9</span>
+                    </div>
+                    <p class="dest-desc">A sacred mountain offering an unforgettable sunrise hike and stunning panoramic views.</p>
+                    <button class="btn btn-light-blue w-100"><i class="fa-solid fa-plus"></i> Add to Plan</button>
+                </div>
+            </div>
+            
+            <!-- Card 7 -->
+            <div class="dest-card">
+                <div class="dest-img" style="background-image: url('colombo.jpg');">
+                    <button class="like-btn"><i class="fa-regular fa-heart"></i></button>
+                    <span class="dest-badge bg-blue">CITY</span>
+                </div>
+                <div class="dest-content">
+                    <div class="dest-header">
+                        <h3 class="dest-title">Colombo</h3>
+                        <span class="dest-rating"><i class="fa-solid fa-star"></i> 4.6</span>
+                    </div>
+                    <p class="dest-desc">The bustling capital mixing colonial heritage with modern skyscrapers and markets.</p>
+                    <button class="btn btn-light-blue w-100"><i class="fa-solid fa-plus"></i> Add to Plan</button>
+                </div>
+            </div>
+
+            <!-- Card 8 -->
+            <div class="dest-card">
+                <div class="dest-img" style="background-image: url('nuwara_eliya.jpg');">
+                    <button class="like-btn"><i class="fa-regular fa-heart"></i></button>
+                    <span class="dest-badge" style="background-color: var(--app-orange);">ADVENTURE</span>
+                </div>
+                <div class="dest-content">
+                    <div class="dest-header">
+                        <h3 class="dest-title">Nuwara Eliya</h3>
+                        <span class="dest-rating"><i class="fa-solid fa-star"></i> 4.8</span>
+                    </div>
+                    <p class="dest-desc">Endless tea plantations and cool climates in the scenic "Little England" of Sri Lanka.</p>
+                    <button class="btn btn-light-blue w-100"><i class="fa-solid fa-plus"></i> Add to Plan</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- My Plan Section -->
+        <section id="my-plan-section" style="display: none; padding: 4rem var(--container-padding); border-top: 1px solid var(--border-color); background-color: transparent;">
+            <div style="max-width: var(--container-max-width); margin: 0 auto;">
+                <h2 class="explore-title" style="font-size: 2rem; margin-bottom: 2rem; text-align: left;"><span class="text-blue">My</span> Plan</h2>
+                <div class="explore-grid" id="my-plan-grid">
+                    <!-- Cloned cards go here -->
+                </div>
+                <div style="margin-top: 3rem; text-align: center;">
+                    <a href="budget.html" class="btn btn-primary btn-large">Finalize Budget <i class="fa-solid fa-arrow-right" style="margin-left: 0.5rem;"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="explore-footer">
+        <a href="index.html" class="footer-logo" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 0.5rem;">
+            <img src="logo.png" alt="Pearl Path Logo" class="logo-image" style="height: 24px; width: auto; vertical-align: middle; margin-right: 8px;">
+            <span class="logo-text" style="font-weight: 700; color: var(--text-dark);">Pearl Path</span>
+        </a>
+        <p>&copy; 2024 Pearl Path. Helping you discover and plan unforgettable journeys since 2024.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
